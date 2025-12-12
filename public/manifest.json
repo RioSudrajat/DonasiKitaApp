@@ -1,0 +1,26 @@
+{
+    "name": "DonasiKita - Platform Donasi Sosial",
+    "short_name": "DonasiKita",
+    "description": "Platform donasi sosial untuk mengumpulkan dana untuk berbagai kampanye sosial. Mudah, aman, dan terpercaya.",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "orientation": "portrait-primary",
+    "theme_color": "#667eea",
+    "background_color": "#ffffff",
+    "categories": ["charity", "donation", "social"],
+    "icons": [
+        {
+            "src": "/images/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/images/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}

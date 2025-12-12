@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#667eea">
+    <title>DonasiKita - Mode Offline</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .offline-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .offline-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: #f0f4ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+
+        h1 {
+            color: #1a1a2e;
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .offline-message {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .offline-tips {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: left;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .offline-tips strong {
+            display: block;
+            color: #1a1a2e;
+            margin-bottom: 8px;
+        }
+
+        .offline-tips ul {
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+
+        .retry-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-top: 20px;
+        }
+
+        .retry-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .retry-btn:active {
+            transform: translateY(0);
+        }
+
+        .offline-status {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 13px;
+            color: #999;
+        }
+
+        @media (max-width: 600px) {
+            .offline-container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .offline-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="offline-container">
+        <div class="offline-icon">📡</div>
+        <h1>Sedang Offline</h1>
+        <p class="offline-message">
+            Koneksi internet Anda saat ini tidak tersedia. Namun, Anda masih dapat melihat beberapa halaman yang telah dimuat sebelumnya.
+        </p>
+
+        <div class="offline-tips">
+            <strong>💡 Saran:</strong>
+            <ul>
+                <li>Periksa koneksi Wi-Fi atau mobile data Anda</li>
+                <li>Cobalah untuk kembali online</li>
+                <li>Refresh halaman untuk mencoba lagi</li>
+                <li>Kunjungi kembali halaman yang telah Anda akses sebelumnya</li>
+            </ul>
+        </div>
+
+        <button class="retry-btn" onclick="location.reload()">
+            🔄 Coba Lagi
+        </button>
+
+        <div class="offline-status">
+            <p>Status: <strong>Offline Mode Aktif</strong></p>
+            <p style="margin-top: 8px;">DonasiKita akan otomatis tersinkronisasi saat Anda kembali online.</p>
+        </div>
+    </div>
+
+    <script>
+        // Check connection status
+        window.addEventListener('online', function() {
+            console.log('Koneksi telah dipulihkan');
+            // Could show a notification or redirect
+        });
+
+        window.addEventListener('offline', function() {
+            console.log('Offline');
+        });
+    </script>
+</body>
+</html>
+            color: #787878;
+        }
+    </style>
+</head>
+<body>
+<div class="error_body">
+    <div
+        class="container error_container d-flex justify-content-center align-items-center flex-column w-100 h-100 p-5 text-center">
+        <h2 class="error_message text-center mb-3">Boo! You don't have an internet connection</h2>
+        <p class="error_paragraph text-center mb-5">
+            Please check your network connection and try again.
+        </p>
+        <a href="/" class="btn btn-primary error_btn">Back to Home Page</a>
+    </div>
+</div>
+</body>
+</html>
