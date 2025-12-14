@@ -43,6 +43,11 @@ Route::get('/donation/success', [DonationController::class, 'success'])->name('d
 
 // --- ROUTE BAWAAN BREEZE (AUTH) ---
 
+Route::get('/migrate-db', function () {
+    \Illuminate\Support\Facades\Artisan::call('migrate:force');
+    return 'Migrated!';
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -59,7 +64,4 @@ require __DIR__.'/auth.php';
 // --- ROUTE ADMIN PANEL ---
 require __DIR__.'/admin.php';
 
-Route::get('/migrate-db', function () {
-    \Illuminate\Support\Facades\Artisan::call('migrate:force');
-    return 'Migrated!';
-});
+
