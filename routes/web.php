@@ -43,10 +43,7 @@ Route::get('/donation/success', [DonationController::class, 'success'])->name('d
 
 // --- ROUTE BAWAAN BREEZE (AUTH) ---
 
-Route::get('/migrate-db', function () {
-    \Illuminate\Support\Facades\Artisan::call('migrate:force');
-    return 'Migrated!';
-});
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

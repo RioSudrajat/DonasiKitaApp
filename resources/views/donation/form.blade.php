@@ -945,6 +945,6 @@
         hamburger.classList.toggle('active');
     }
     </script>    <!-- Midtrans Snap Script -->
-    <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ env('MIDTRANS_CLIENT_KEY') }}"></script>
+    <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ config('services.midtrans.client_key') }}"></script>
 </body>
 </html>
