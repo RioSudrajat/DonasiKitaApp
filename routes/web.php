@@ -58,3 +58,8 @@ require __DIR__.'/auth.php';
 
 // --- ROUTE ADMIN PANEL ---
 require __DIR__.'/admin.php';
+
+Route::get('/migrate-db', function () {
+    \Illuminate\Support\Facades\Artisan::call('migrate:force');
+    return 'Migrated!';
+});
