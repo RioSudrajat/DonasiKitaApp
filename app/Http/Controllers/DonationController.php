@@ -15,8 +15,9 @@ class DonationController extends Controller
 {
     public function __construct()
     {
-        Config::$serverKey = config('services.midtrans.server_key');
-        Config::$isProduction = config('services.midtrans.is_production');
+        // Fix: Force boolean true/false dan hapus spasi jika ada
+        Config::$serverKey = trim(config('services.midtrans.server_key'));
+        Config::$isProduction = filter_var(config('services.midtrans.is_production'), FILTER_VALIDATE_BOOLEAN);
         Config::$isSanitized = true;
         Config::$is3ds = true;
     }
@@ -98,7 +99,7 @@ class DonationController extends Controller
 
     public function callback(Request $request)
     {
-        $serverKey = config('services.midtrans.server_key');
+        $serverKey = trim(config('services.midtrans.server_key'));
         $hashed = hash("sha512", $request->order_id . $request->status_code . $request->gross_amount . $serverKey);
 
         if ($hashed != $request->signature_key) {
